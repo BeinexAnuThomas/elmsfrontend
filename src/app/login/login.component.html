@@ -1,0 +1,106 @@
+<app-home-navbar></app-home-navbar>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="../../assets/images/login_img.svg" height="100%" width="100%">
+        </div>
+        <div class="col-md-4 mt-3 mb-2">
+            <h3  class="text-success text-center"><b>Welcome To Leave Soft</b></h3>
+            <form style="margin-top:10px ;" [formGroup]="myform" class="mt-6 p-3" (ngSubmit)="onSubmit()">
+              <h3 style="padding-top:10px ;" class="text-primary mb-3">Login </h3>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput"  formControlName="username" placeholder="Username" name="username" />
+                <!-- <small class="text-danger justify-content-left" *ngIf="username.invalid && username.touched">Please enter a
+                  valid username.</small> -->
+                   <!-- <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username" [(ngModel)]="username"> --> 
+                  <label for="floatingInput">Username</label>
+                  <!-- <label for="floatingInput">Username</label> -->
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingInput" formControlName="password" placeholder="Password" name="password" >
+                <!-- <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" [(ngModel)]="password"> --> 
+                <label for="floatingPassword">Password</label>
+              </div> 
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end"> 
+                <button class="btn btn-outline-success me-md-2" type="submit"  >Login</button>
+                <!-- <button class="btn btn-outline-success me-md-2" type="button" (click)="login()" >Login</button> -->
+              </div>
+            </form>
+            <!-- <form action="" class="mt-5 p-5" >
+                <h3 class="text-primary mb-3">Login </h3>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username" >
+                     <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username" [(ngModel)]="username"> --> 
+                    <!-- <label for="floatingInput">Email address</label>
+                </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingInput" placeholder="Password" name="password" >
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" [(ngModel)]="password"> -->
+                    <!-- <label for="floatingPassword">Password</label>
+                  </div> -->
+                  <!-- <div class="form-floating mb-3">
+                    <select class="form-select" id="floatingSelect" aria-label="Role" name="role" [(ngModel)]="role">
+                      <option *ngFor="let r of roles" [value]="r">{{r}}</option>
+                    </select>
+                    <label for="floatingSelect">Role</label>
+                  </div> -->
+                  <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-end"> -->
+                    <!-- <button class="btn btn-outline-success me-md-2" type="button" (click)="login()" >Login</button> -->
+                  <!-- </div> -->
+
+                  <!-- <a routerLink="/signup" class="text-primary" style="text-decoration: none;">Need account ? </a>
+            </form>  -->
+
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- <html>
+<head> -->
+ 
+   <!-- Required meta tags -->
+    <!-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+ 
+  <!-- Bootstrap CSS -->
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+ 
+<!-- </head> -->
+ 
+<!-- <body> -->
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+<!-- Login form creation starts-->
+  <!-- <section class="container-fluid"> -->
+    <!-- row and justify-content-center class is used to place the form in center -->
+   
+    <!-- <section class="row justify-content-center">
+      <section class="col-12 col-sm-6 col-md-4">
+        <form [formGroup]="myform" (ngSubmit)="onSubmit()" class="form-container">
+            <div class="form-group">
+            <h4 class="text-center font-weight-bold"> Login </h4>
+            <label for="text">Username</label>
+            <input type="text" class="form-control" formControlName="username">
+            </div>
+            <div class="form-group">
+            <label for="InputPassword1">Password</label>
+            <input type="password" class="form-control" id="InputPassword1" formControlName="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        
+        </form>
+      </section>
+    </section>
+  </section> -->
+<!-- Login form creation ends -->
+<!-- </body> -->
+<!-- </html>  -->

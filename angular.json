@@ -65,7 +65,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "EmployeeManagement:build:production"
+              "browserTarget": "EmployeeManagement:build:production",
+               "proxyConfig": "src/proxy.conf.json"
             },
             "development": {
               "browserTarget": "EmployeeManagement:build:development"
@@ -100,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "d8f136fe-9771-4987-9da3-9e2b727b9456"
   }
 }

@@ -1,0 +1,47 @@
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-brand" >
+            <img src="/assets/images/L.png" width="80px" height="65px" style="padding-left: 5px;" >
+        </div>  
+        
+        <div class="navbar-brand ">
+           <h1><a routerLink="homepage" style="color:rgb(56, 221, 155); font-weight: bold; padding-left: 0%;text-decoration: none;"><strong>LeaveSoft</strong></a></h1>
+            <!-- <p>Paperless,Fast and Efficient</p> -->
+        </div> 
+          <!-- <a class="navbar-brand" routerLink="homepage">&nbsp; Employee Management System</a> -->
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  &nbsp; &nbsp; &nbsp;
+                  <li class="nav-item">
+                    <a class="nav-link btn btn-primary navbar-btn" type="button" routerLink="/admin" >Employee Management</a> 
+                  </li>
+                  &nbsp; &nbsp; &nbsp;
+                  <li class="nav-item"> 
+                      <!-- <button routerlink="leave" class="m-1 btn btn-outline-primary" Button>Leave Management</button>  -->
+                      <a class="nav-link btn btn-primary navbar-btn" type="button" routerLink="/employeeleave" >Leave Management</a>
+                  </li>
+                  &nbsp; &nbsp; &nbsp;
+                  <li class="nav-item"> 
+                    <!-- <button routerlink="leave" class="m-1 btn btn-outline-primary" Button>Leave Management</button>  -->
+                    <a class="nav-link btn btn-primary navbar-btn" type="button" routerLink="/register" >User Register</a>
+                </li>
+                &nbsp; &nbsp; &nbsp;
+                  <li class="nav-item"> 
+                      <!-- <button routerlink="leave" class="m-1 btn btn-outline-primary" Button>Leave Management</button>  -->
+                      <a class="nav-link btn btn-primary navbar-btn" type="button" (click)="logout()" >Logout</a>
+                      <!-- <button class="btn btn-outline-success me-md-2" type="submit" routerLink="/logout"  >Login</button> -->
+                  </li>
+  
+                 
+              </ul>
+          </div>
+      </div>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+  
+  

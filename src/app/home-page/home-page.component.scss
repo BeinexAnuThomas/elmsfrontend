@@ -1,0 +1,38 @@
+li{
+    font-size: 18px;
+    font-weight: bold;
+}
+.banner
+{
+    background-image:url("../../assets/images/banner3.svg") ;
+    // background-image: url('../../../assets/images/banner3.svg');
+    height: 710px;
+    // background-position: center top;
+    background-size: cover;
+}
+.navbtn{
+    float: right;
+}
+.content h1 
+{
+    color: #fff;
+    font-size: 60px;
+    font-weight: bold;
+  
+}
+.content p,h4 
+{
+    padding-top: 10px;
+   text-align: center;
+    color: rgb(226, 215, 248);
+    
+}
+.content p{
+    padding-left: 45%;
+}
+
+.content a:hover 
+{
+    background-color:#fff;
+    color:green;
+}
