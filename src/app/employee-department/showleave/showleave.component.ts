@@ -46,16 +46,11 @@ export class ShowleaveComponent implements OnInit {
 
   editClick(item: any){
     console.log(item);
-
-    if (this.emp.status=="pending"){
       this.emp=item;
       this.ModalTitle="Edit leave";
       this.ActivateAddEditEmpComp=true;
       this.ActivateviewEmpComp=false;
-    }
-    else{
-     alert("Can't Edit this leave");
-    }
+   
       
   }
   // view
