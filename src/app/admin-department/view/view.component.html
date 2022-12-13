@@ -1,186 +1,26 @@
-<div class="bread-crumb">
-    <div>    <span>Employee Details</span>   </div>
+<div class="card cardstyle" style="width: 35rem;margin-left: 500px;">
+  <!-- <img class="card-img-top" src="{{data.profile_pic}}" alt="Card image cap"> -->
+  <div class="card-body">
+    <h3 class="card-title">{{data.employee_Name}}</h3>
+    <div class="card-text">
+                  <h5>{{data.EmployeeId}}</h5> 
+                  <div><b>Email :</b> &nbsp;&nbsp;&nbsp;&nbsp;{{data.email}}</div>
+                  <div><b>Contact Number : </b>&nbsp;&nbsp;&nbsp;&nbsp;{{data.contact_Number}}</div>
+                  <div><b>Emergency Contact Number : </b>&nbsp;&nbsp;&nbsp;&nbsp;{{data.emergency_Contact_Number}}</div>
+                  <div><b>Address : </b>&nbsp;&nbsp;&nbsp;&nbsp;{{data.address}}</div>
+                  <div><b>Designation : </b>&nbsp;&nbsp;&nbsp;&nbsp;{{data.position}}</div>
+                  <!-- <div><b>Qualification : </b>&nbsp;&nbsp;&nbsp;&nbsp;{{data.qualification}}</div> -->
+                  <div><b>Date of Birth: </b>&nbsp;&nbsp;&nbsp;&nbsp;{{data. dOB}}</div>
+                  <!-- <div><b>Gender: </b>&nbsp;&nbsp;&nbsp;&nbsp;{{data.gender}}</div> -->
+                  <div><b>Marital Status : </b>&nbsp;&nbsp;&nbsp;&nbsp;{{data. martial_Status}}</div>
+                  <div><b>Blood Group : </b>&nbsp;&nbsp;&nbsp;&nbsp;{{data.blood_Group}}</div>
+                  <div><b>Work Location : </b>&nbsp;&nbsp;&nbsp;&nbsp;{{data.work_Location}}</div>
+                  <div><b>Department : </b>&nbsp;&nbsp;&nbsp;&nbsp;{{data.job_Title}}</div>
+                  <div><b>Date of Joining :</b> &nbsp;&nbsp;&nbsp;&nbsp;{{data.date_Of_Joining}}</div>
+                  <div><b>Reporting To : </b>&nbsp;&nbsp;&nbsp;&nbsp;{{data.reporting_To}}</div>
+                  <div><b>Linkedin link : </b>&nbsp;&nbsp;&nbsp;&nbsp;{{data.linkedin_Link}}</div>
+    </div><br>
+    <br>
+    <a  routerLink="/admin" class="btn btn-primary"><-- Back</a>
+  </div>
 </div>
-<div class="container">
-    <!-- <div class="flex">
-        <div class="card c-hover" *ngFor="let employee of EmployeeList" >
-
-                 <!-- <div class="ml-3 bd-highlight" style="width: 30%;"> -->
-                <!-- <img [src]=PhotoFilePath height="250px;" width="200px;">
-                <input type="file" (change)="uploadPhoto($event)" class="mt-2"/>
-                </div> -->
-                <!-- <h1>{{profile_pic}}</h1> -->
-                 <!-- <h3>employee_Name</h3><br> 
-                <div>Email : {{email}}</div><br>
-                <div>Contact Number : {{contact_Number}}</div><br>
-                <div>Emergency Contact Number : {{emergency_Contact_Number}}</div><br>
-                <div>Address : {{address}}</div><br>
-                <div>Designation : {{position}}</div><br>
-                <div>Qualification : {{job_Title}}</div><br>
-                <div>DOB: {{dOB}}</div><br>
-                <div>Marital Status : {{martial_Status}}</div><br>
-                <div>BloodGroup : {{blood_Group}}</div><br>
-                <div>WorkLocation : {{work_Location}}</div><br> -->
-                <!-- <div>Department : {{Department}}</div><br> -->
-                <!-- <div>Date of Joining : {{date_Of_Joining}}</div><br>
-                <div>Reporting To : {{reporting_To}}</div><br>
-                <div>Linkedin link : {{linkedin_Link}}</div><br>
-                --> 
-                
-                
-
-               
-                
-                 
-                
-
-                <!-- <div class="buttons">
-                    <a routerLink="edit/{{employee.id}}"><button class="btn secondary" style="margin-left: 0;">Edit</button></a>
-                    <button (click)="deleteTheData(employee.id)" class="btn danger">Delete</button>  
-                </div> -->
-        <!-- </div>
-</div>
-</div> -->
-<div class="flex">
-        <div class="card c-hover" *ngFor="let employee of EmployeeList" >
-hello
-                  <div class="ml-3 bd-highlight" style="width: 30%;">
-                <img [src]=employee.PhotoFilePath height="250px;" width="200px;">
-                <!-- <input type="file" (change)="uploadPhoto($event)" class="mt-2"/> -->
-                </div>
-                <!-- <h1>{{employee.profile_pic}}</h1> -->
-                <h3>{{employee.employee_Name}}</h3><br> 
-                <div>Email : {{employee.email}}</div><br>
-                <div>Contact Number : {{employee.contact_Number}}</div><br>
-                <div>Emergency Contact Number : {{employee.emergency_Contact_Number}}</div><br>
-                <div>Address : {{employee.address}}</div><br>
-                <div>Designation : {{employee.position}}</div><br>
-                <div>Qualification : {{employee.job_Title}}</div><br>
-                <div>DOB: {{employee. dOB}}</div><br>
-                <div>Marital Status : {{employee. martial_Status}}</div><br>
-                <div>BloodGroup : {{employee.blood_Group}}</div><br>
-                <div>WorkLocation : {{employee.work_Location}}</div><br>
-                <div>Department : {{employee.Department}}</div><br>
-                <div>Date of Joining : {{employee.date_Of_Joining}}</div><br>
-                <div>Reporting To : {{employee.reporting_To}}</div><br>
-                <div>Linkedin link : {{employee.linkedin_Link}}</div><br>
-                
-                
-                
-
-               
-                
-                 
-                
-
-                <!-- <div class="buttons">
-                    <a routerLink="edit/{{employee.id}}"><button class="btn secondary" style="margin-left: 0;">Edit</button></a>
-                    <button (click)="deleteTheData(employee.id)" class="btn danger">Delete</button>  
-                </div> -->
-        </div>
-</div>
-</div>
-
-
-<!-- <div class="d-flex flex-row bd-highlight mb-3">
-
-    <div class="form-froup row" style="width: 60%;">
-     -->
-        <!-- <label class="col-sm-2 col-form-label">Employee Name</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" [(ngModel)]="employee_Name"
-            placeholder="Enter Employee Name">
-        </div> -->
-
-        <!-- <label class="col-sm-2 col-form-label">Email ID</label>
-        <div class="col-sm-10">
-            <input type="email" class="form-control" [(ngModel)]="email"
-            placeholder="Enter Email ID">
-        </div> -->
-
-        <!-- <label class="col-sm-2 col-form-label">Contact Number</label>
-        <div class="col-sm-10">
-            <input type="number" class="form-control" [(ngModel)]="contact_Number"
-            placeholder="Enter ">
-        </div> -->
-
-        <!-- <label class="col-sm-2 col-form-label">Em num</label>
-        <div class="col-sm-10">
-            <input type="number" class="form-control" [(ngModel)]="emergency_Contact_Number"
-            placeholder="Enter Employee Name">
-        </div> -->
-
-        <!-- <label class="col-sm-2 col-form-label">ADDRESS </label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" [(ngModel)]="address"
-            placeholder="Enter Employee Name">
-        </div> -->
-
-        <!-- <label class="col-sm-2 col-form-label">Designation</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" [(ngModel)]="position"
-            placeholder="Enter Employee Name">
-        </div> -->
-
-        <!-- <label class="col-sm-2 col-form-label">Dob</label>
-        <div class="col-sm-10">
-            <input type="text"  [(ngModel)]="dOB">
-        </div> -->
-
-        <!-- <label class="col-sm-2 col-form-label">martial_Status</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" [(ngModel)]="martial_Status"
-            placeholder="Enter Employee Name">
-        </div> -->
-
-        <!-- <label class="col-sm-2 col-form-label"> blood_Group</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" [(ngModel)]="blood_Group"
-            placeholder="Enter Employee Name">
-        </div> -->
-
-        <!-- <label class="col-sm-2 col-form-label">job_Title</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" [(ngModel)]="job_Title"
-            placeholder="Enter Employee Name">
-        </div> -->
-
-        <!-- <label class="col-sm-2 col-form-label">work_Location</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" [(ngModel)]="work_Location"
-            placeholder="Enter Employee Name">
-        </div> -->
-    
-        <!-- <label class="col-sm-2 col-form-label">Department</label>
-        <div class="col-sm-10">
-           <select class="form-control" [(ngModel)]="Department">
-               <option>--Select--</option>
-               <option *ngFor="let depName of DepartmentsList">
-                   {{depName.DepartmentName}}
-               </option>
-           </select>
-        </div> -->
-    
-        <!-- <label class="col-sm-2 col-form-label">Date of joining</label>
-        <div class="col-sm-10">
-            <input type="text"  [(ngModel)]="date_Of_Joining">
-        </div>
-
-        <label class="col-sm-2 col-form-label">reporting_To</label>
-        <div class="col-sm-10">
-            <input type="text"  [(ngModel)]="reporting_To">
-        </div> -->
-
-        <!-- <label class="col-sm-2 col-form-label">linkedin_Link</label>
-        <div class="col-sm-10">
-            <input type="text"  [(ngModel)]="linkedin_Link">
-        </div>
-     -->
-    <!-- </div> -->
-    <!-- <div class="ml-3 bd-highlight" style="width: 40%;">
-    <img [src]=PhotoFilePath height="250px;" width="200px;">
-    <input type="file" (change)="uploadPhoto($event)" class="mt-2"/>
-    </div> -->
-    <!-- </div> -->
-    
-    

@@ -8,9 +8,14 @@
        All Approved Leaves
       </button>
       <button type="button" class="btn btn-primary float-right m-2" data-bs-toggle="modal" data-bs-target="#exampleModal"
-        (click)="all_rejected_leave()"
+        (click)="all_pending_leave()"
         data-backdrop="static" data-keyboard="false">
         All Pending Leaves
+      </button>
+      <button type="button" class="btn btn-primary float-right m-2" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        (click)="all_rejected_leave()"
+        data-backdrop="static" data-keyboard="false">
+        All Rejected Leaves
       </button>
     </div>
     <!-- <div class="search-employees">
@@ -79,16 +84,28 @@
                 <td>{{dataItem.first_Day}}</td>
                 <td>{{dataItem.last_Day}}</td>
                 <td>{{dataItem. number_Of_Days}}</td>
-                <!-- <td>{{dataItem.status}}</td> -->
-                  <td>
+                <!-- <td >{{dataItem.status}}</td> -->
+                <!-- *ngIf="!approvalStatus(dataItem.status)" -->
+                <td>
+                  
+                 <button (click)="approveClick(dataItem)" *ngIf="dataItem.status=='pending'" class="btn btn-warning">Approve</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                 <button (click)="rejectClick(dataItem)" *ngIf="dataItem.status=='pending'"  class="btn btn-danger">Reject</button> &nbsp;&nbsp;&nbsp;&nbsp;
+                 <button *ngIf="dataItem.status=='approve'"  class="btn btn-success">Approved</button>
+                 <button *ngIf="dataItem.status=='reject'"  class="btn btn-danger">Rejected!!</button>&nbsp;&nbsp;           
+                </td>
+                <!-- <td *ngIf="dataItem.status=='pending'" >
+                  <button class="btn btn-success">Approve</button>
+                  <button class="btn btn-danger">Reject</button>                 
+                 </td> -->
+                  <!-- <td >
                     <button type="button" class="btn btn-success mr-1" data-toggle="modal" data-target="#exampleModal"
-                      (click)="approveClick(dataItem)" data-backdrop="static" data-keyboard="false"> Approve               
+                    value="approved" ng-click="status=approved" (click)="approveClick(dataItem)" data-backdrop="static" data-keyboard="false"> Approve               
                     </button>&nbsp;&nbsp;&nbsp;
   
                     <button type="button" class="btn btn-danger mr-1"                    
-                      (click)="rejectClick(dataItem)" data-backdrop="static" data-keyboard="false">  Reject                
+                    value="rejected" ng-click="status=rejected" (click)="rejectClick(dataItem)" data-backdrop="static" data-keyboard="false">  Reject                
                     </button>&nbsp;&nbsp;&nbsp;
-                  </td>
+                  </td> -->
               </tr>
           </tbody>
       </table>

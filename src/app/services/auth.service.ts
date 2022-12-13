@@ -14,15 +14,18 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
-  api_url: string = 'http://localhost:8000/';
+  // api_url: string = 'http://localhost:8000/';
   constructor(private http:HttpClient) { }
+  getAuthToken() {
+    return localStorage.getItem('token')
+    }
   
   register(val:any){
-    return this.http.post(this.api_url + 'accounts/register/',val);
+    return this.http.post( 'accounts/register/',val);
   }
 
   login(username: string, password: string){
-    return this.http.post<any>(this.api_url + `accounts/api/auth/`,
+    return this.http.post<any>( `accounts/api/auth/`,
      { username, password}, httpOptions).pipe(
        map(user =>{
         if(user && user.token){
@@ -35,4 +38,11 @@ export class AuthService {
   logout(){
     localStorage.removeItem('currentUser');
   }
+
+  // getAuthToken(token:string):string {
+  //   return localStorage.getItem('user.token')
+  //   }
 }
+// private saveAuthData(token: string, expirationDate: Date) {  
+//   localStorage.setItem('token', token);  
+// }  

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +20,12 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { EmpleaveNavbarComponent } from './empleave-navbar/empleave-navbar.component';
-import { EmpleaveComponent } from './admin-department/empleave/empleave.component'
+import { EmpleaveComponent } from './admin-department/empleave/empleave.component';
+import { AllapprovedleavesComponent } from './allapprovedleaves/allapprovedleaves.component';
+import { AllpendingleavesComponent } from './allpendingleaves/allpendingleaves.component'
+import { InterceptInterceptor } from './intercept.interceptor';
+import { AllrejectedleavesComponent } from './allrejectedleaves/allrejectedleaves.component';
+import { ViewleaveComponent } from './employee-department/viewleave/viewleave.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,11 @@ import { EmpleaveComponent } from './admin-department/empleave/empleave.componen
     HomeNavbarComponent,
     NavbarComponent,
     EmpleaveNavbarComponent,
-    EmpleaveComponent
+    EmpleaveComponent,
+    AllapprovedleavesComponent,
+    AllpendingleavesComponent,
+    AllrejectedleavesComponent,
+    ViewleaveComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +58,10 @@ import { EmpleaveComponent } from './admin-department/empleave/empleave.componen
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [PublicService],
+  providers: [
+    PublicService,
+    {provide:HTTP_INTERCEPTORS,useClass:InterceptInterceptor,multi:true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

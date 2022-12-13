@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { PublicService } from 'src/app/services/public.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-empleave',
   templateUrl: './empleave.component.html',
   styleUrls: ['./empleave.component.scss']
 })
 export class EmpleaveComponent {
-  constructor(private service:PublicService) { }
+  constructor(private service:PublicService,private route:Router) { }
 
   LeaveList:any=[];
 
@@ -28,6 +29,7 @@ export class EmpleaveComponent {
     this.emp={
       
         // "apply_date": "",
+        "id":0,
         "user": 0,
         "nature_of_leave": "",
         "first_Day": "",
@@ -109,30 +111,49 @@ export class EmpleaveComponent {
       }
     })
   }
+  
 
-  approveClick(item: { lid: any; }){
+  approveClick(item: { id: any; }){
+    console.log(item.id);
     if(confirm('Are you sure you want to approve this leave? ')){
-      this.service.deleteleave(item.lid).subscribe(data=>{
-        alert(data.toString());
+      this.service. approveClicked(item.id).subscribe(data=>{
+        console.log(data);
         this.refreshleaveList();
       })
     }
   }
-  rejectClick(item: { lid: any; }){
+  rejectClick(item: { id: any; }){
+    console.log(item.id);
     if(confirm('Are you sure you want to reject this leave? ')){
-      this.service.deleteleave(item.lid).subscribe(data=>{
-        alert(data.toString());
+      this.service.rejectClicked(item.id).subscribe(data=>{
+        console.log(data);
         this.refreshleaveList();
       })
     }
   }
 
   all_approved_leave(){
-    this.refreshleaveList();
+    this.service.allapprovedleaves().subscribe(data=>{
+      console.log(data);
+      this.route.navigate(['allapprovedleaves']);
+      this.refreshleaveList();
+    })
+  }
+
+  all_pending_leave(){
+    this.service.allpendingleaves().subscribe(data=>{
+      console.log(data);
+      this.route.navigate(['allpendingleaves']);
+      this.refreshleaveList();
+    })
   }
 
   all_rejected_leave(){
-    this.refreshleaveList();
+    this.service.allrejectedleaves().subscribe(data=>{
+      console.log(data);
+      this.route.navigate(['allrejectedleaves']);
+      this.refreshleaveList();
+    })
   }
 
   closeleaveClick(){

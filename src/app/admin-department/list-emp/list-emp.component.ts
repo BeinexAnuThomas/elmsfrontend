@@ -57,7 +57,8 @@ export class ListEmpComponent implements OnInit {
   }
 
   deleteClick(item: { EmployeeId: any; }){
-    if(confirm('Are you sure??')){
+
+    if(confirm('Are you sure want to delete this Employee ??')){
       this.service.deleteEmployee(item.EmployeeId).subscribe(data=>{
         alert(data.toString());
         this.refreshEmpList();
@@ -65,13 +66,13 @@ export class ListEmpComponent implements OnInit {
     }
   }
   // view
-  viewClick(item: any){
-    console.log(item);
-    this.emp=item;
-    this.ModalTitle="View Employee";
-    this.route.navigate(['viewemployee'])
-    this.ActivateviewEmpComp=true;
-  }
+  // viewClick(item: any){
+  //   console.log(item);
+  //   this.emp=item;
+  //   // this.ModalTitle="View Employee";
+  //   this.route.navigate(['viewemployee'])
+  //   this.ActivateviewEmpComp=true;
+  // }
 
   closeClick(){
     this.ActivateAddEditEmpComp=false;

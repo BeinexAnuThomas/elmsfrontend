@@ -9,6 +9,12 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { EmpleaveComponent } from './admin-department/empleave/empleave.component';
 import { ViewComponent } from './admin-department/view/view.component';
+import { AllapprovedleavesComponent } from './allapprovedleaves/allapprovedleaves.component';
+import { AllpendingleavesComponent } from './allpendingleaves/allpendingleaves.component';
+import { AuthGuardGuard } from './auth-guard.guard';
+import { ViewleaveComponent } from './employee-department/viewleave/viewleave.component';
+import { AllrejectedleavesComponent } from './allrejectedleaves/allrejectedleaves.component';
+
 const routes: Routes = [
     {path:'', component : HomePageComponent},
     {path:'profile',component : ProfileComponent},
@@ -17,8 +23,12 @@ const routes: Routes = [
     {path:'register',component:RegisterComponent},
     {path:'login',component:LoginComponent},
     {path: 'employeeleave',component:EmpleaveComponent},
-    {path: 'viewemployee',component:ViewComponent}
-];
+    {path: 'viewemployee/:id',component:ViewComponent},
+    {path: 'viewleave/:id',component:ViewleaveComponent},
+    {path: 'allapprovedleaves',component:AllapprovedleavesComponent},
+    {path: 'allpendingleaves',component:AllpendingleavesComponent},
+    {path: 'allrejectedleaves',component:AllrejectedleavesComponent}
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

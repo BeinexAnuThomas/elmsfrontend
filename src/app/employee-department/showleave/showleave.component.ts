@@ -11,7 +11,7 @@ export class ShowleaveComponent implements OnInit {
   constructor(private service:PublicService) { }
 
   LeaveList:any=[];
-
+  id:any
   ModalTitle!:string;
   ActivateAddEditEmpComp:boolean=false;
   ActivateviewEmpComp:boolean=false;
@@ -68,7 +68,7 @@ export class ShowleaveComponent implements OnInit {
   }
 
   deleteClick(item: { id: any; }){
-    if(confirm('Are you sure??')){
+    if(confirm('Are you sure want to delete this leave ??')){
       this.service.deleteleave(item.id).subscribe(data=>{
         alert(data.toString());
         this.refreshEmpList();
@@ -81,10 +81,17 @@ export class ShowleaveComponent implements OnInit {
     this.ActivateAddEditEmpComp=false;
     this.refreshEmpList();
   }
-
+  myleaves(item: { id: any; }){
+    this.service.getleaveListbyuser(item.id).subscribe(data=>{
+      // this.service.getleaveList().subscribe(data=>{
+      this.LeaveList=data;
+      this.apply_date_without_filter=data;
+    });
+  }
 
   refreshEmpList(){
-    this.service.getleaveList().subscribe(data=>{
+    // this.service.getleaveListbyuser(item.user).subscribe(data=>{
+      this.service.getleaveList().subscribe(data=>{
       this.LeaveList=data;
       this.apply_date_without_filter=data;
     });

@@ -34,6 +34,7 @@ username: any;
         {
         this.router.navigate(['admin'])
           console.log(data);
+          console.log(data.token)
           alert('Admin login are done Successfully....')
         }
         else{
